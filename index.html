@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splitter - makes the bill FUN</title>
+</head>
+<body>
+    <main class="mainContainer">
+        <nav class="title">
+            <img src="/images/logo.svg" alt="Logo of the app SPLITTER">
+        </nav>
+
+        <div class="middleContainer">
+
+            <div class="billInput">
+                <label for="bill">Bill</label>
+                <input type="number" name="bill" id="bill">
+            </div>
+
+            <div class="selectTip">
+                <div class="buttonGroupTip">
+                    <button>5%</button>
+                    <button>10%</button>
+                    <button>15%</button>
+                    <button>25%</button>
+                    <button>50%</button>
+                    <input type="number" name="customTip" id="customTip" placeholder="Custom">
+                </div>
+            </div>
+
+            <div class="numOfPeople">
+                <label for="numberPeople">Number of People</label>
+                <input type="number" name="numberPeople" id="numberPeople">
+            </div>
+
+            <div class="result">
+
+                <div class="result">
+
+                    <div class="tipAmount">
+                        <span class="resultHeader">Tip Amount <span class="smallText">/ person</span></span>
+                        <span class="tipResult resultAmount">$456</span>
+                    </div>
+
+                    <div class="totalResult">
+                        <span class="resultHeader">Total <span class="smallText">/ person</span></span>
+                        <span class="totalResult resultAmount">$456</span>
+                    </div>
+
+                    <button class="resetBtn">RESET</button>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
