@@ -1,64 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Splitter - makes the bill FUN</title>
-    <link rel="stylesheet" href="/style/style.css">
-    <script src="javaScript/app.js" defer></script>
-</head>
-<body>
-    <main class="mainContainer">
-        <nav class="title">
-            <img src="/images/logo.svg" alt="Logo of the app SPLITTER">
-        </nav>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Splitter - makes the bill FUN</title>
+		<link rel="stylesheet" href="/style/style.css" />
+	</head>
+	<body>
+		<main class="mainContainer">
+			<nav class="title">
+				<img src="/images/logo.svg" alt="Logo of the app SPLITTER" />
+			</nav>
 
-        <div class="middleContainer">
+			<div class="middleContainer">
+				<div class="left">
+					<div class="billInput">
+						<label for="bill">Bill</label>
+						<label class="hiddenLabel" id="billHiddenLabel" for="bill"
+							>Please Enter The Bill Amount</label
+						>
+						<div class="imgInputWrapper">
+							<input tabindex="0" type="number" name="bill" id="bill" />
+							<img
+								class="inputSvg"
+								src="/images/icon-dollar.svg"
+								alt="Dollar sign"
+							/>
+						</div>
+					</div>
+					<div class="selectTip" id="selectTip">
+						<span class="selectTipHeader">Select Tip %</span>
+						<span class="hiddenMessage" id="tipSelectHiddenMessage"
+							>Please Select a Tip</span
+						>
+						<div class="buttonGroupTip" id="buttonGroupTip">
+							<button id="fivePercent" class="btn btnTip">5%</button>
+							<button id="tenPercent" class="btn btnTip">10%</button>
+							<button id="fifteenPercent" class="btn btnTip">15%</button>
+							<button id="twentyfivePercent" class="btn btnTip">25%</button>
+							<button id="fiftyPercent" class="btn btnTip">50%</button>
+							<input
+								tabindex="0"
+								type="number"
+								name="customTip"
+								id="customTip"
+								placeholder="Custom"
+							/>
+						</div>
+					</div>
+					<div class="numOfPeople">
+						<label for="numberPeople">Number of People</label>
+						<label class="hiddenLabel" id="peopleHiddenLabel" for="bill"
+							>Please Enter The Number of People</label
+						>
+						<div class="imgInputWrapper">
+							<input
+								tabindex="0"
+								id="numOfPeople"
+								type="number"
+								name="numberPeople"
+								id="numberPeople"
+							/>
+							<img
+								class="inputSvg"
+								src="/images/icon-person.svg"
+								alt="person Svg"
+							/>
+						</div>
+					</div>
+					<div class="btnCalcContainer">
+						<a id="calcBtn" href="#result"
+							><button class="btnCalc" id="btnCalc">Calculate Tip</button></a
+						>
+					</div>
+				</div>
 
-            <div class="billInput">
-                <label for="bill">Bill</label>
-                <input type="number" name="bill" id="bill">
-            </div>
+				<div class="right">
+					<div class="result" id="result">
+						<div class="result">
+							<div class="tipAmount amountTotal">
+								<span class="resultHeader"
+									>Tip Amount
+									<div class="smallText">/ person</div></span
+								>
+								<span id="tipResultAmount" class="tipResult resultAmount"
+									>$$$</span
+								>
+							</div>
+							<div class="totalResult amountTotal">
+								<span class="resultHeader"
+									>Total
+									<div class="smallText">/ person</div></span
+								>
+								<span id="totalResult" class="totalResult resultAmount"
+									>$$$</span
+								>
+							</div>
+							<button id="resetBtn" class="resetBtn">RESET</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
 
-            <div class="selectTip">
-                <div class="buttonGroupTip">
-                    <button>5%</button>
-                    <button>10%</button>
-                    <button>15%</button>
-                    <button>25%</button>
-                    <button>50%</button>
-                    <input type="number" name="customTip" id="customTip" placeholder="Custom">
-                </div>
-            </div>
-
-            <div class="numOfPeople">
-                <label for="numberPeople">Number of People</label>
-                <input type="number" name="numberPeople" id="numberPeople">
-            </div>
-
-            <div class="result">
-
-                <div class="result">
-
-                    <div class="tipAmount">
-                        <span class="resultHeader">Tip Amount <span class="smallText">/ person</span></span>
-                        <span class="tipResult resultAmount">$456</span>
-                    </div>
-
-                    <div class="totalResult">
-                        <span class="resultHeader">Total <span class="smallText">/ person</span></span>
-                        <span class="totalResult resultAmount">$456</span>
-                    </div>
-
-                    <button class="resetBtn">RESET</button>
-
-                </div>
-
-
-            </div>
-
-        </div>
-    </main>
-</body>
+		<script src="javaScript/app.js"></script>
+	</body>
 </html>

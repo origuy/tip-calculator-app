@@ -14,16 +14,379 @@ $colorMainDarkerCyan: #5e7a7d;
 $colorMainVeryDarkCyan: #00494d;
 $ColorMainCyan: #26c0ab;
 
-html{
-    font-size: 10px;
+/* Label & Input */
+$labelFontColor: $colorMainDarkerCyan;
+$labelFontWeight: 700;
+$labelFontSize: 1.6rem;
+$labelMarginBottom: 1rem;
+$inputWidth: 100%;
+$inputHeight: 3.5rem;
+$inputBackgroundColor: $colorMainDarkerWhite;
+$inputOutlineColor: $ColorMainCyan;
+$inputFocusFontSize: 2rem;
+$inputFocusPaddingRight: 1.3rem;
+$inputFocusFontColor:$colorMainVeryDarkCyan;
+$inputFocusFontWeight:700;
+
+/* Buttons */ 
+
+$btnBackgroundColor: $colorMainVeryDarkCyan;
+$btnFontColor: $colorMainDarkerWhite;
+$btnFontSize: 2.5rem;
+$btnBorderRadius: 0.8rem;
+$btnFontWeight: 700;
+$btnPadding: 1rem;
+$btnHoverBackgroundColor: $ColorMainCyan;
+$btnHoverFontColor: $colorMainLightCyan;
+$customTipActiveBackgroundColor: $colorMainLightCyan;
+$btnCalcWidth: 19rem;
+$btnCalcHeight: 6rem;
+$btnCalcFontSize: 2rem;
+$btnCalcBackgroundColor: $colorMainLightCyan;
+$btnCalcPadding: 1.5rem;
+$btnCalcBorderRadius: 1rem;
+$btnCalcMarginBottom: 3rem;
+$btnResetWidth: 14rem;
+$btnResetHeight: 6rem;
+$btnResetBorderRadius: 0.8rem;
+$btnResetBackgroundColor: $colorMainLightCyan;
+$btnResetFontColor: 4rem;
+$btnResetFontSize: 2.5rem;
+$btnResetHoverBackgroundColor: #FFEEAD;
+$btnResetHoverFontColor: $colorMainVeryDarkCyan;
+
+
+
+/* Title variables */
+$titleHeight: 20vh;
+$titleBackgroundColor: $colorMainLightCyan;
+
+/* middleContainer variables */
+$middleContainerHeight: 93vh;
+$middleContainerBackgroundColor: $colorMainWhite;
+$middleContainerBorderRadius: 2rem;
+$middleContainerPositionBottom: 1rem;
+$middleContainerPadding: 3rem;
+
+/* middleContainer > selectTip > buttonGroupTip */
+$buttonGroupTipGridGap:1rem;
+
+/* middleContainer > result */
+$resultBackgroundColor:  $colorMainVeryDarkCyan;
+$resultBorderRadius:  1rem;
+$resultHeight:  25rem;
+$resultPadding:  1.5rem;
+$resultFontSize:  3rem;
+$resultPersonFontColor: $colorMainDarkerCyan;
+$resultAmountFontColor: $ColorMainCyan;
+$resultAmountFontSize: 3rem;
+$resultHeaderFontColor: $colorMainDarkerWhite;
+$resultHeaderFontSize: 1.5rem;
+$resultHeaderLetterSpacing: 0.8rem;
+
+
+html {
+	font-size: 10px;
+    scroll-behavior:smooth;
+
 }
 
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+.left{
+    width: 100%;
+    align-self: center;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+
+}
+.right{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-self: center;
+
 }
 
-body{
-    font-family: 'IBM Plex Mono', monospace;  
+body {
+	font-family: "IBM Plex Mono", monospace;
+}
+input,label{
+    display: block;
+}
+
+label{
+    color: $labelFontColor;
+    font-weight: $labelFontWeight;
+    font-size: $labelFontSize;
+    margin-bottom: $labelMarginBottom;
+}
+.hiddenLabel{
+    position: absolute;
+    top: 3%;
+    left: 35%;
+    color: tomato;
+    display: none;
+    font-size: 1.2rem;
+}
+input{
+    width: $inputWidth;
+    height: $inputHeight;
+    border: none;
+    background-color: $inputBackgroundColor;
+    text-align: right;
+    padding-right: $inputFocusPaddingRight;
+    font-size: $inputFocusFontSize;
+    color:$inputFocusFontColor;
+    font-weight: $inputFocusFontWeight;
+    font-family: "IBM Plex Mono", monospace;
+
+}
+input:focus{
+    outline-color: $inputOutlineColor;
+    font-size: $inputFocusFontSize;
+    color:$inputFocusFontColor;
+    font-weight: $inputFocusFontWeight;
+    font-family: "IBM Plex Mono", monospace;
+
+ 
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.imgInputWrapper{
+    position: relative;
+    .inputSvg{
+        position:absolute;
+        top: 25%;
+        left: 5%;    
+    }
+}
+
+.mainContainer {
+
+	.title {
+		height: $titleHeight;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $titleBackgroundColor;
+	}
+
+	.middleContainer {
+		height: $middleContainerHeight;
+		background-color: $middleContainerBackgroundColor;
+		border-radius: $middleContainerBorderRadius;
+		position: relative;
+		bottom: $middleContainerPositionBottom;
+		padding: $middleContainerPadding;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        gap: 3rem;
+        .billInput{
+            position: relative;
+            #billHiddenLabel{
+               
+            }
+        }
+
+        .selectTip{
+            position: relative;
+            .selectTipHeader{
+                font-size: $labelFontSize;
+                color: $labelFontColor;
+                margin-bottom: $labelMarginBottom;
+                font-weight: 700;
+            }
+            #tipSelectHiddenMessage{
+                color: tomato;
+                font-weight: 700;
+                font-size: 1.2rem;
+                position:absolute;
+                right: 3%;
+                display: none;
+            }
+            .buttonGroupTip{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                gap: $buttonGroupTipGridGap;
+            
+                .btnTip{
+                    border: none;
+                    background-color: $btnBackgroundColor;
+                    font-size: $btnFontSize;
+                    color: $btnFontColor;
+                    border-radius: $btnBorderRadius;
+                    font-weight: $btnFontWeight;
+                    font-family: "IBM Plex Mono", monospace;
+                    padding: $btnPadding;
+                    transition: all 0.5s ease-in-out;
+                }
+                .btnTip:hover{
+                    background-color:$btnHoverBackgroundColor ;
+                    // color: $btnHoverFontColor;
+                    cursor: pointer;
+                }
+                #customTip{
+                    border: none;
+                    background-color: $btnBackgroundColor;
+                    font-size: $btnFontSize;
+                    color: $btnFontColor;
+                    border-radius: $btnBorderRadius;
+                    font-weight: $btnFontWeight;
+                    font-family: "IBM Plex Mono", monospace;
+                    padding: $btnPadding;
+                    height: 100%;
+                    text-align: center;
+                }
+                #customTip:focus{
+                    background-color: $customTipActiveBackgroundColor;
+                    color: $btnHoverFontColor;
+                    text-align: center;
+                }
+                #customTip::placeholder{
+                    color: $btnFontColor;
+                    text-align: center;
+                }
+            }
+        }
+
+        .numOfPeople{
+            position: relative;
+            #peopleHiddenLabel{
+                top: 108%;
+                left: 28%;
+            }
+        }
+        .btnCalcContainer{
+            text-align: center;
+            .btnCalc{
+                width: $btnCalcWidth;
+                height: $btnCalcHeight;
+                font-size: $btnCalcFontSize;
+                font-family: "IBM Plex Mono", monospace;
+                border: none;
+                background-color: $btnCalcBackgroundColor;
+                padding: $btnCalcPadding;
+                border-radius: $btnCalcBorderRadius;
+                transition: all 0.5s ease-in-out,transform 100ms ease-in-out ;
+                font-weight: 700;
+                color: $labelFontColor;
+                margin-bottom: $btnCalcMarginBottom;
+                cursor: pointer;
+            }
+            .btnCalc:hover{
+                background-color:$btnHoverBackgroundColor ;
+                color: $btnHoverFontColor;
+            }
+            .btnCalc:active{
+                transform: translateY(0.2rem);
+            }
+            a:link,a:visited,a:hover{
+                text-decoration: none;
+                color:$labelFontColor ;
+            }
+            a:hover{
+                color: $btnHoverFontColor;
+            }
+        }
+
+        .result{
+            background-color: $resultBackgroundColor;
+            border-radius: $resultBorderRadius;
+            height: $resultHeight;
+            padding: $resultPadding;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-evenly;
+            .amountTotal{
+                display: flex;
+                justify-content: space-between;
+            }
+            .resultHeader{
+                color: $resultHeaderFontColor;
+                font-weight: 700;
+                font-size: $resultHeaderFontSize;
+            }
+            .smallText{
+                color: $resultPersonFontColor ;
+                font-weight: 700;
+            }
+            .resultAmount{
+                color: $resultAmountFontColor;
+                font-size: $resultAmountFontSize;
+                font-weight: 700;
+                letter-spacing: $resultHeaderLetterSpacing;
+            }
+            .resetBtn{
+                align-self: center;
+                width: $btnResetWidth;
+                height: $btnResetHeight;
+                font-size: $btnResetFontSize;
+                border: none;
+                background-color: $btnResetBackgroundColor;
+                border-radius: $btnResetBorderRadius;
+                margin-top: 3rem;
+                font-weight: 700;
+                color: $labelFontColor;
+                transition: background-color .5s ease-in-out,color .5s ease-in-out,transform 100ms ease-in-out ;
+                cursor: pointer;
+            
+            }
+            .resetBtn:hover{
+
+                background-color: $btnResetHoverBackgroundColor;
+                color: $btnResetHoverFontColor;
+            }
+            .resetBtn:active{
+
+                transform: translateY(0.2rem);
+            }
+        }
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $colorMainLightCyan;
+    }
+ 
+    .left{
+        width: 50%;
+        align-self: center;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 2rem;
+    
+    }
+    .right{
+        width: 50%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-self: center;
+
+    }
+    .mainContainer{
+        display: flex;
+        height: 100vh;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+        .middleContainer{
+            display: flex;
+            flex-flow: row nowrap;
+            height: 55vh;
+            padding: 5rem;
+        }
+    }
 }
