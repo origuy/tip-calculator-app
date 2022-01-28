@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- GitHub URL: https://github.com/origuy/Preview-Card-Component
-- Live Site URL: https://previewcardcomponentoriguy.netlify.app
+- GitHub URL: https://github.com/origuy/tip-calculator-app
+- Live Site URL: https://tipcalculatororiguy.netlify.app
 
 ## My process
 
