@@ -257,4 +257,3 @@ buttonGroupTipGrabber.addEventListener("touchstart", getBtnSelected);
 resetBtnGrabber.addEventListener("click",reset);
 resetBtnGrabber.addEventListener("touchstart",reset);
 
-fivePercentGrabber.addEventListener("touchstart", fiveFlag=true);
