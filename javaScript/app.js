@@ -249,6 +249,10 @@ let paintSelected = () => {
      }
 }
 calcTipBtnGrabber.addEventListener("click", calc);
+calcTipBtnGrabber.addEventListener("touchstart", calc);
 document.addEventListener("click", hideMessage);
+document.addEventListener("touchstart", hideMessage);
 buttonGroupTipGrabber.addEventListener("click", getBtnSelected);
-resetBtnGrabber.addEventListener("click",reset)
+buttonGroupTipGrabber.addEventListener("touchstart", getBtnSelected);
+resetBtnGrabber.addEventListener("click",reset);
+resetBtnGrabber.addEventListener("touchstart",reset);
