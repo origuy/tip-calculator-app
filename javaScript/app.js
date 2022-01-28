@@ -125,7 +125,8 @@ let validateInputs = () => {
 
 let getBtnSelected = () => {
 	console.log("Clicked Btn");
-	console.log(document.activeElement.id);
+	console.log(document.activeElement.id)
+	console.log();
 	fiveFlag = false;
 	tenFlag = false;
 	fifteenFlag = false;
